@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍬 Cửa hàng Bánh kẹo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+  <nav id="navbar">
+    <div class="logo-container">
+      <img src="images/0fe00e4243d6d.png" alt="Logo" class="logo">
+      <h1>🍬 Cửa hàng Bánh kẹo</h1>
+    </div>
+    
+    <ul>
+      <li><a href="javascript:void(0);" onclick="showPage('home')">Trang chủ</a></li>
+      <li><a href="javascript:void(0);" onclick="showPage('products')">Sản phẩm</a></li>
+      <li><a href="javascript:void(0);" onclick="showPage('cart')">Giỏ hàng</a></li>
+      <li><a href="javascript:void(0);" onclick="showPage('orders')">Đơn hàng</a></li>
+      <li><a href="javascript:void(0);" onclick="showPage('admin')">Quản lý sản phẩm</a></li>
+            <li><button id="login-btn" onclick="openLogin()">Đăng nhập/Đăng ký</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div id="home" class="page active">
+    <h2>Chào mừng đến với Cửa hàng Bánh kẹo!</h2>
+    <p>Khám phá những món bánh kẹo ngọt ngào!</p>
+  
+    <section class="intro">
+      <h3>Giới thiệu</h3>
+      <p>Chúng tôi chuyên cung cấp những loại bánh kẹo ngon nhất, được chọn lọc kỹ càng từ các thương hiệu uy tín. Dù bạn thích vị ngọt ngào, chua chua hay mặn mà – chúng tôi đều có đủ!</p>
+    </section>
+  
+    <section class="promo">
+      <h3>🎁 Ưu đãi đặc biệt</h3>
+      <ul>
+        <li>Mua 2 tặng 1 cho tất cả kẹo dẻo</li>
+        <li>Miễn phí giao hàng cho đơn từ 200.000₫</li>
+        <li>Giảm 10% cho khách hàng mới</li>
+      </ul>
+    </section>
+  
+    <section class="why-us">
+      <h3>Vì sao chọn chúng tôi?</h3>
+      <ul>
+        <li>Chất lượng đảm bảo</li>
+        <li>Giao hàng nhanh chóng</li>
+        <li>Hỗ trợ khách hàng 24/7</li>
+      </ul>
+    </section>
+  
+    <section class="reviews">
+      <h3>Khách hàng nói gì?</h3>
+      <blockquote>"Bánh kẹo rất ngon và giao hàng đúng giờ. Sẽ ủng hộ dài lâu!" – Lan, Hà Nội</blockquote>
+      <blockquote>"Shop dễ thương, đóng gói cẩn thận. Bé nhà mình mê tít!" – Huyền, TP.HCM</blockquote>
+    </section>
+  </div>
+  
+
+  <div id="products" class="page hidden">
+    <h2>Danh sách sản phẩm</h2>
+    <div id="product-list" class="product-container">
+    </div>
+  </div>
+
+  <div id="cart" class="page hidden">
+    <h2>Giỏ hàng</h2>
+    <div id="cart-list"></div>
+    <h3 id="total">Tổng tiền: 0₫</h3>
+    <input type="text" id="address" placeholder="Địa chỉ giao hàng">
+    <button onclick="checkout()">Đặt hàng</button>
+  </div>
+  
+<div id="orders" class="page hidden">
+  <h2>Đơn hàng</h2>
+  <div id="order-list" class="order-list">
+    <!-- Danh sách đơn hàng sẽ được render bằng JavaScript -->
+  </div>
+</div>
+
+
+  <div id="admin" class="page hidden">
+    <h2>Quản lý sản phẩm (Admin)</h2>
+    <div id="admin-section">
+      <form onsubmit="addProduct(event)">
+        <input type="text" id="admin-name" placeholder="Tên sản phẩm" required>
+        <input type="text" id="admin-desc" placeholder="Mô tả" required>
+        <input type="number" id="admin-price" placeholder="Giá" required>
+        <input type="text" id="admin-image" placeholder="URL ảnh" required>
+        <button type="submit">Thêm sản phẩm</button>
+      </form>
+      <div id="admin-product-list"></div>
+    </div>
+  </div>
+
+  </main>
+
+<!-- Popup đăng nhập / đăng ký -->
+<section id="authModal" class="popup hidden">
+  <div class="popup-content">
+    <button id="closeAuth" class="close">X</button>
+    <div id="loginForm" class="auth-form">
+      <h2>Đăng Nhập</h2>
+      <form>
+        <label for="username">Tài khoản:</label>
+        <input type="text" id="username" required>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Đăng nhập</button>
+      </form>
+      <p>Chưa có tài khoản? <a href="javascript:void(0);" id="showRegister">Đăng ký ngay</a></p>
+    </div>
+    <div id="registerForm" class="auth-form hidden">
+      <h2>Đăng Ký</h2>
+      <form>
+        <label for="newUsername">Tài khoản:</label>
+        <input type="text" id="newUsername" required>
+        <label for="newEmail">Email:</label>
+        <input type="email" id="newEmail" required>
+        <label for="newPassword">Mật khẩu:</label>
+        <input type="password" id="newPassword" required>
+        <label for="confirmPassword">Xác nhận mật khẩu:</label>
+        <input type="password" id="confirmPassword" required>
+        <button type="submit">Đăng ký</button>
+      </form>
+      <p>Đã có tài khoản? <a href="javascript:void(0);" id="showLogin">Đăng nhập</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Popup xem chi tiết sản phẩm -->
+<div id="productDetailModal" class="popup hidden">
+  <div class="popup-content">
+    <button id="closeProductDetail" class="close">X</button>
+    <h2 id="detailName"></h2>
+    <img id="detailImage" src="" alt="Sản phẩm" style="max-width: 100%; height: auto; border-radius: 12px;">
+    <p id="detailDesc"></p>
+    <h3 id="detailPrice"></h3>
+  </div>
+</div>
+
+<div class="footer-logo">
+  <img src="images/0fe00e4243d6d.png" alt="Logo Footer" class="logo">
+</div>
+
+
+<footer>
+  <p>Theo dõi chúng tôi:</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:example@email.com" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.tiktok.com/" target="_blank" title="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

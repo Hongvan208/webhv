@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Socola đen",
+    "description": "Ngọt ngào đậm vị",
+    "price": 50000,
+    "image": "https://cf.shopee.vn/file/bbe52f31bf18be48c1a09f9537e0be0a"
+  },
+  {
+    "id": 2,
+    "name": "Kẹo dẻo trái cây",
+    "description": "Dẻo thơm hấp dẫn",
+    "price": 40000,
+    "image": "https://m.media-amazon.com/images/I/61P12b5P4FL._SL1000_.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Bánh quy bơ",
+    "description": "Giòn thơm, béo ngậy",
+    "price": 60000,
+    "image": "https://ttol.vietnamnetjsc.vn/images/2022/12/12/10/51/banh-quy-004-20221212.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Socola hạnh nhân",
+    "description": "Ngon không cưỡng",
+    "price": 70000,
+    "image": "https://vietthaichocolate.com.vn/wp-content/uploads/2019/12/8936029720358.png"
+  },
+  {
+    "id": 5,
+    "name": "Kẹo mút vị dâu",
+    "description": "Ngọt lịm môi",
+    "price": 20000,
+    "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-loz5xypjc5zv36"
+  },
+  {
+    "id": 6,
+    "name": "Nước thạch trái cây",
+    "description": "Tan chảy trong miệng",
+    "price": 35000,
+    "image": "https://cf.shopee.com.my/file/fe2fc336ff20577635ed538e38d6ed5c"
+  },
+  {
+    "id": 7,
+    "name": "Bánh cupcake",
+    "description": "Mềm mịn, ngọt ngào",
+    "price": 45000,
+    "image": "https://truongphat247.vn/wp-content/uploads/2019/05/banh-sinh-nhat-cupcake-hoa-45b59959d0b306.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Kẹo marshmallow",
+    "description": "Mềm xốp, thơm phức",
+    "price": 30000,
+    "image": "https://www.fufaton.com/candy-files/uploadfiles/image/2022.05.02/FFM2035_White-and-Colorful-Mini-Marshmallows_775.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Sữa chưa uống ProbyProby",
+    "description": "Thơm ngonngon, cuốn hút",
+    "price": 65000,
+    "image": "https://cdn.chanhtuoi.com/uploads/2023/08/sua-chua-probi-3.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Kẹo dừa Bến Tre",
+    "description": "Chuẩn vị miền Tây",
+    "price": 30000,
+    "image": "https://tse2.mm.bing.net/th/id/OIP.khLLs3M8xPr4-EZneZNW1wHaFL?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": 11,
+    "name": "Bánh bông lan trứng muối",
+    "description": "Béo mặn, đậm đà",
+    "price": 75000,
+    "image": "https://daubepgiadinh.vn/wp-content/uploads/2017/03/bong-lan-trung-muoi-600x400.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Bánh mochi mix vịvị",
+    "description": "Vị bánh thơm ngon ",
+    "price": 55000,
+    "image": "https://jmarthcm.com/wp-content/uploads/2023/11/BANH-BAO-CHI-NHIEU-VI-MOCHI-MIXED-NHAT-BAN-HOP-300G-1024x1024.png"
+  }
+]
